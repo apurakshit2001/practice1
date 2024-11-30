@@ -1,0 +1,35 @@
+body {
+    /* min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+}
+
+
+/* let first = 0, second = 0, third = 0;
+    
+for (let i = 0; i < data.length; i++) {
+    if (data[i].sal > first) {
+        third = second;
+        second = first;
+        first = data[i].sal;
+    } else if (data[i].sal > second) {
+        third = second;
+        second = data[i].sal;
+    } else if (data[i].sal > third) {
+        third = data[i].sal;
+    }
+}
+
+
+const thirdHighestUser = data.find(user => user.sal === third);
+
+if (thirdHighestUser) {
+    console.log("Third Highest Salary Getter:", thirdHighestUser);
+    setData([{...thirdHighestUser}]); // Update state here
+    return thirdHighestUser;
+} else {
+    console.log("Not enough users to determine the third-highest salary.");
+    return null;
+} */

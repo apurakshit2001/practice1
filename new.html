@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .counter {
+            text-align: center;
+        }
+        .counter button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .count {
+            display: inline-block;
+            font-size: 20px;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter">
+        <button id="decrement">-</button>
+        <span class="count" id="count">0</span>
+        <button id="increment">+</button>
+    </div>
+
+    <script>
+        const countElement = document.getElementById('count');
+        const decrementButton = document.getElementById('decrement');
+        const incrementButton = document.getElementById('increment');
+
+        let count = 0;
+
+        incrementButton.addEventListener('click', () => {
+            count++;
+            countElement.textContent = count;
+        });
+
+        decrementButton.addEventListener('click', () => {
+            if (count > 0) {
+                count--;
+                countElement.textContent = count;
+            }
+        });
+    </script>
+</body>
+</html>
