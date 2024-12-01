@@ -16,6 +16,9 @@ const Home = () => {
         document.body.style.padding = '25px'
     }, []);
 
+    const handleReset = () => {
+        setData(usersList);
+    }
     const handleSortAgeDesc = (e) => {
         let descSortArr = [...data]
         descSortArr.sort((a, b) => a.age - b.age)
@@ -99,8 +102,21 @@ const Home = () => {
     }
 
     const handleTaDA = (e) => { }
-    const handleFilterUserSal3rdHighest = () => {};
-    const handleFilterUserSal3rdLowest = (e) => { }
+
+    const handleFilterUserSal3rdHighest = () => {
+        let descSortArr = [...data]
+        descSortArr.sort((a, b) => a.sal - b.sal)
+        let thirdHighestSalary = descSortArr[2]
+        setData([thirdHighestSalary]);
+    };
+
+    const handleFilterUserSal3rdLowest = (e) => {
+        let descSortArr = [...data]
+        descSortArr.sort((a, b) => a.sal - b.sal)
+        let ascSortArr = descSortArr.reverse()
+        let thirdHighestSalary = ascSortArr[2]
+        setData([thirdHighestSalary]);
+    }
 
 
     return (
@@ -116,7 +132,9 @@ const Home = () => {
                         <th>Name</th>
                         <th>Age</th>
                         <th>Salary</th>
-                        <th>Date of Joining</th>
+                        <th>Date of Joining
+                            <button onClick={handleReset} className='btn btn-primary mx-1 my-1'>Reset</button>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
